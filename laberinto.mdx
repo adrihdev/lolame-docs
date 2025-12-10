@@ -1,0 +1,130 @@
+---
+title: 'Laberinto'
+icon: 'compass'
+---
+
+<Info>  
+Si estás siguiendo el orden del evento original, debes guiarte por la **luz 6**, que te llevará a la zona de **Panal**.  
+</Info>
+
+## Preparación de equipos
+
+Forma **equipos pares** entre sí (de tamaños semejantes). <Warning>
+Para este juego deben participar **más de 10 personas por equipo**. </Warning>
+
+Abre y cierra las puertas iniciales:
+
+```mcfunction
+/ce call HuevosDoor_Open_Call
+/ce call HuevosDoor_Close_Call
+```
+
+Lleva a todos a su ascensor. Cuando estén dentro, viaja al área del juego:
+
+```mcfunction
+/tp.sal.lab
+```
+
+## Recolección de llaves
+
+Una vez llegues, abre todas las puertas e indica a los jugadores que **tomen una llave**.
+
+<Info>  
+Si un jugador no puede recoger la llave, activa temporalmente el PvP:  
+```mcfunction
+/pvp.on
+```  
+Cuando todos la tengan:  
+```mcfunction
+/pvp.off
+```  
+</Info>
+
+## División por colores
+
+Pídeles que se separen en los **dos lados del área**: azul y rojo.
+No es necesario que queden exactamente parejos.
+
+Luego realiza lo siguiente:
+
+<Steps>
+  <Step>
+    Coloca <strong>barrier blocks en el centro</strong>.
+  </Step>
+
+  <Step>
+    Quita los barrier blocks de la <strong>figura de la llave</strong>.
+  </Step>
+
+  <Step>
+    Abre las <strong>dos puertas de Laberinto</strong>.
+  </Step>
+</Steps>
+
+
+## Explicación del juego
+
+Silencia a todos los jugadores y avisa que la explicación es importante y compleja.
+Luego reproduce la explicación:
+
+```mcfunction
+/playsound minecraft:lolame.squid.laberinto_ex ambient @a ~ ~ ~ 345435
+```
+
+Cuando termine, desmutea a todos.
+
+## Inicio del juego
+
+Por seguridad, ejecuta primero:
+
+```mcfunction
+/laberinto.reset
+```
+
+Luego inicia oficialmente:
+
+```mcfunction
+/laberinto.start
+```
+
+<Info>  
+Desde este punto, solo queda **rezar por la vida de todos**…  
+Disfruta el “cine” si no sabían de qué trataba el juego.  
+</Info>
+
+## Gestión de avances
+
+Cuando un equipo tenga **10 jugadores que hayan escapado**, elimina a los jugadores restantes de ese mismo equipo, ya que no quedan más tarjetas disponibles.
+
+Ejemplo:
+Si 10 jugadores del **equipo amarillo** logran salir, elimina al resto del equipo amarillo.
+
+Si el tiempo termina y quedan equipos que **no alcanzaron 10 escapados**, elimina a los jugadores que aún permanezcan dentro.
+
+Una vez todos hayan salido (o sido eliminados):
+
+```mcfunction
+/laberinto.stop
+```
+
+Esto finaliza oficialmente la partida.
+
+## Salida del área
+
+Abre la puerta donde se encuentran los jugadores que lograron escapar.
+
+Luego posiciona los bloques para permitir el paso:
+
+```mcfunction
+/execute in minecraft:overworld run tp @s -2699.18 12.90 -113.30 556.58 11.40
+```
+
+Finalmente, regresa a todos al ascensor:
+
+```mcfunction
+/tp.lab.sal
+```
+
+<Warning>  
+Ejecuta el comando de regreso solo cuando **todos estén dentro del ascensor**.  
+</Warning>

@@ -1,0 +1,99 @@
+---  
+title: 'Colas Locas'  
+icon: 'traffic-cone'  
+---
+
+<Info>  
+El ascensor de **Colas Locas** se identifica por los carteles situados sobre los ascensores.  
+El número del juego es **5**.  
+</Info>
+
+## Acceso al juego
+
+Para ir a Colas Locas, una vez todos estén dentro del ascensor, ejecuta:
+
+```mcfunction
+/tp.sal.col
+```
+
+<Info>  
+Las **colas** deben colocarse manualmente.  
+El ítem utilizado es:  
+```mcfunction
+/give @s minecraft:dead_fire_coral_fan
+```  
+Coloca la cantidad de colas que consideres necesaria en el área de juego.  
+</Info>
+
+## Cinemática y ambientación
+
+Activa la cinemática del juego:
+
+```mcfunction
+/cin.colas
+```
+
+Apaga las luces para mejorar la ambientación:
+
+```mcfunction
+/luces.off
+```
+
+Cuando termine la cinemática, vuelve a encenderlas:
+
+```mcfunction
+/luces.on
+```
+
+## Inicio de la ronda
+
+Inicia la partida de Colas Locas:
+
+```mcfunction
+/colas.start
+```
+
+<Warning>  
+Si el servidor tiene *lag* o los TPS bajan, la ronda podría no finalizar exactamente a los **10 minutos**.  
+En ese caso, usa:  
+```mcfunction
+/colas.stop
+```  
+</Warning>
+
+<Info>
+Este comando detiene la ronda manualmente. Luego espera a que el **finalizador automático** concluya, puede tardar un poco.  
+</Info>
+
+## Gestión del juego
+
+Eliminar a un jugador aleatorio que no tenga cola:
+
+```mcfunction
+/colas.kill
+```
+
+Anunciar el final del juego:
+
+```mcfunction
+/playsound minecraft:lolame.squid.juego_finalizado_sigan_al_personal ambient @a ~ ~ ~ 436465
+```
+
+Una vez todos los jugadores estén eliminados, limpia sus estados:
+
+```mcfunction
+/team join Jugador @a[team=patata]
+/effect clear @a minecraft:glowing
+```
+
+## Regresar a las escaleras
+
+Cuando todos estén dentro del ascensor, ejecuta:
+
+```mcfunction
+/tp.col.sal
+```
+
+<Warning>  
+Ejecuta este comando **solo cuando todos estén dentro del ascensor**.  
+</Warning>

@@ -1,0 +1,113 @@
+---
+title: 'Cristales'
+icon: 'left-right'
+---
+
+<Info>
+El minijuego **Cristales** sigue el orden del evento original.  
+Para llegar al área correspondiente, debes **seguir la luz 8**, que conduce al ascensor del juego.
+</Info>
+
+## Acceso al juego
+
+Para teletransportarte directamente al área:
+
+```mcfunction
+/tp.sal.cri
+````
+
+Comando de ayuda para gestionar los chalecos:
+
+```mcfunction
+/numeros
+```
+
+## Preparación de chalecos
+
+<Tip>
+Se recomienda seguir **este orden** para evitar errores con los chalecos.
+</Tip>
+
+```mcfunction
+/numeros kill all
+/numeros reset all
+/numeros spawn
+```
+
+### Ajustar la cantidad de chalecos según los jugadores
+
+Si llegan **menos jugadores** que chalecos disponibles, debes eliminar los sobrantes.
+
+<Info>
+Por ejemplo, si llegan **20 jugadores** en lugar de 30:
+
+```mcfunction
+/numeros kill 30
+...
+/numeros kill 21
+```
+Elimina solo hasta que coincidas con la cantidad real de jugadores (en este caso, 20).
+</Info>
+
+Si algún jugador no puede recoger su chaleco:
+
+```mcfunction
+/effect clear @a minecraft:weakness
+```
+
+## Subida al juego y preparación del escenario
+
+Mientras los jugadores suben por el ascensor hacia el puente de cristales, ejecuta lo siguiente:
+
+```mcfunction
+/time set 13000
+/luces.off
+/cristales.regenerar
+/cristales.random
+/fill -120 70 455 -111 70 455 barrier
+```
+
+<Info>
+`/cristales.regenerar` restablece todos los cristales.  
+`/cristales.random` inicia la **aleatorización** de cristales resistentes y débiles.  
+El comando `/fill` coloca una barrera para evitar que los jugadores avancen antes de tiempo.
+</Info>
+
+Cuando todos estén arriba:
+
+```mcfunction
+/cin.cristales
+```
+
+## Selección del orden de turno
+
+Elige cómo avanzarán los jugadores:
+
+* **Menor a mayor**:
+
+  ```mcfunction
+  /playsound minecraft:lolame.squid.cristales_ex ambient @a ~ ~ ~ 435345
+  ```
+* **Mayor a menor**:
+
+  ```mcfunction
+  /playsound minecraft:lolame.squid.cristales_ex2 ambient @a ~ ~ ~ 435345
+  ```
+
+## Inicio y fin del juego
+
+Iniciar Cristales:
+
+```mcfunction
+/cristales.start
+```
+
+Detener el juego cuando termina el tiempo:
+
+```mcfunction
+/cristales.stop
+```
+
+<Warning>
+Asegúrate de que todos los jugadores hayan completado su turno antes de detener el juego.
+</Warning>

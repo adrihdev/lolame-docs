@@ -1,0 +1,82 @@
+---
+title: 'Final'
+icon: 'sword'
+---
+
+<Info>
+La **Final** es la última fase del evento.  
+Es crucial que la configuración del equipo sea correcta para evitar bugs.
+</Info>
+
+## Preparación antes de iniciar la final
+
+<Warning>
+Asegúrate de que **solo queden 2 jugadores** en el equipo `Jugador`.  
+Si hay más de 2 jugadores en ese equipo, la final **se bugueará**.
+</Warning>
+
+Puedes verificar y ajustar manualmente el equipo si es necesario:
+
+```mcfunction
+/team join Jugador <jugador>
+/team leave Jugador <jugador>
+````
+
+Cuando los dos finalistas estén listos, activa la cinemática:
+
+```mcfunction
+/cin.final
+```
+
+## Configuración de finalistas
+
+Mientras se reproduce la cinemática, ejecuta:
+
+```mcfunction
+/finalbars set <finalista_1> <finalista_2>
+```
+
+Esto registrará a los dos jugadores que participarán en el enfrentamiento final.
+
+## Inicio del combate final
+
+Comienza la final usando:
+
+```mcfunction
+/start.final
+```
+
+<Info>
+En esta fase, los jugadores empezarán el duelo que decidirá al ganador absoluto.
+</Info>
+
+## Mecánica de victoria
+
+Cuando alguno de los dos finalistas quede a **medio corazón**, el otro deberá:
+
+1. **Agarrar al oponente** usando **Shift + Click**.
+2. **Lanzarlo al precipicio**.
+
+<Info>
+Cuando el jugador caiga, se activará **automáticamente la última cinemática**.  
+¡Disfruta del cierre del evento!
+</Info>
+
+## Después de la final
+
+Al terminar la cinemática final puedes hacer **lo que quieras** con el mapa.
+Opciones populares:
+
+```mcfunction
+/fill ~~~ ~~~ tnt
+```
+
+O, si prefieres algo más… **caótico**:
+
+```mcfunction
+/alecuatro @a
+```
+
+<Callout icon="heart" color="#FFA44E" iconType="regular">
+Si has llegado hasta aquí, gracias por haber leído todo.
+</Callout>

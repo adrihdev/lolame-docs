@@ -1,0 +1,121 @@
+---
+title: 'Dulces Sueños'
+icon: 'bed'
+---
+
+<Info>
+El ascensor de **Dulces Sueños** se identifica por los carteles situados sobre los ascensores.  
+El número del juego es **1**.
+</Info>
+
+## Acceso al juego
+
+Para ir a Dulces Sueños, una vez todos estén en el ascensor, ejecuta:
+
+```mcfunction
+/tp.sal.dul
+````
+
+<Info>
+Quita los *barrier blocks* para permitir que los jugadores avancen dentro del área del juego.
+</Info>
+
+## Control de puertas
+
+Cerrar la puerta dentro del área de juego:
+
+```mcfunction
+/fill -18 -49 -762 -18 -42 -755 minecraft:spruce_wood replace air
+```
+
+Abrir la puerta:
+
+```mcfunction
+/fill -18 -49 -762 -18 -42 -755 air replace minecraft:spruce_wood
+```
+
+## Cinemática y ambientación
+
+Activa la cinemática del juego con:
+
+```mcfunction
+/cin.dulce
+```
+
+Reproduce música de tensión:
+
+```mcfunction
+/playsound minecraft:lolame.squid.dulcestension2 ambient @a ~ ~ ~ 3465456
+```
+
+## Inicio de la ronda
+
+```mcfunction
+/dulce.ronda.start <segundos>
+```
+
+<Warning>
+Al ejecutar este comando **comienza la ronda**.  
+Si hay muchos jugadores o el servidor no tiene suficientes recursos, puede producir *lag*.
+</Warning>
+
+## Gestión de armarios
+
+Abrir automáticamente un número de armarios:
+
+```mcfunction
+/dulce.armarios.select <número>
+```
+
+<Info>
+Por ejemplo: `/dulce.armarios.select 10` abrirá automáticamente **10 armarios** a la vez.
+</Info>
+
+Resetear los armarios abiertos sin finalizar la ronda:
+
+```mcfunction
+/dulce.armarios.reset
+```
+
+Armarios trampa (eliminan al jugador al entrar, se iluminan en rojo):
+
+```mcfunction
+/dulce.armarios.selecttrampa <número>
+```
+
+<Tip>
+Este comando afecta también a las **camas**, ya que comparten el mismo sistema que los armarios.  
+Es decir, al ejecutar el comando, se pueden abrir por ejemplo **7 armarios y 3 camas** automáticamente.
+</Tip>
+
+## Eliminación automática
+
+Eliminar a un jugador que no haya entrado en ningún armario:
+
+```mcfunction
+/colas.kill
+```
+
+## Finalizar y reiniciar la ronda
+
+Reiniciar la ronda (cierra todos los armarios y libera a todos los jugadores):
+
+```mcfunction
+/dulce.ronda.reset
+```
+
+Anunciar que la ronda terminó:
+
+```mcfunction
+/playsound minecraft:lolame.squid.juego_finalizado_sigan_al_personal ambient @a ~ ~ ~ 45464564
+```
+
+## Regresar a las escaleras
+
+```mcfunction
+/tp.dul.sal
+```
+
+<Warning>
+Ejecuta este comando **solo cuando todos estén dentro del ascensor**.
+</Warning>

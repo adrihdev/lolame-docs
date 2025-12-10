@@ -1,0 +1,71 @@
+---
+title: 'Ciego'
+icon: 'blind'
+---
+
+<Info>
+El ascensor de **Ciego** se identifica por los carteles situados sobre los ascensores.  
+El número del juego es **2**.
+</Info>
+
+## Acceso al juego
+
+Para ir a Ciego, una vez todos estén en el ascensor, ejecuta:
+
+```mcfunction
+/tp.sal.cieg
+````
+
+## Cinemática y ambientación
+
+Activa la cinemática de Ciego con:
+
+```mcfunction
+/cin.ciego
+```
+
+Reproduce la explicación del juego (por si alguien no la escuchó):
+
+```mcfunction
+/playsound minecraft:lolame.squid.ciego_ex ambient @a ~ ~ ~ 34534
+```
+
+Consulta las instrucciones en el chat con:
+
+```mcfunction
+/guias ciego
+```
+
+## Inicio de la ronda
+
+```mcfunction
+/ciego.start <número>
+```
+
+<Warning>
+Al ejecutar este comando **comienza el juego**.  
+Si los guardias reciben efectos de ciego, elimínalos con:
+
+```mcfunction
+/effect clear @a[team=Guardia]
+```
+
+</Warning>
+
+## Sonidos de la ronda
+
+Anunciar que la partida finalizó:
+
+```mcfunction
+/playsound minecraft:lolame.squid.juego_finalizado_sigan_al_personal ambient @a ~ ~ ~ 45464564
+```
+
+## Regresar a las escaleras
+
+```mcfunction
+/tp.cieg.sal
+```
+
+<Warning>
+Ejecuta este comando **solo cuando todos los jugadores estén dentro del ascensor**.
+</Warning>

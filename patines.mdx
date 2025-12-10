@@ -1,0 +1,183 @@
+---
+title: 'Patines Resbalines'
+icon: 'ice-skate'
+---
+
+<Warning>
+Este juego consume muchos recursos del servidor.  
+Practica previamente el uso de los comandos para evitar fallos durante la partida.
+</Warning>
+
+<Info>
+El ascensor de **Patines Resbalines** se identifica por los carteles situados sobre los ascensores.  
+El número del juego es **4**.
+</Info>
+
+## Acceso al juego
+
+Para ir al juego desde el ascensor, ejecuta:
+
+```mcfunction
+/tp.sal.patines
+````
+
+Reproduce música ambiental al llegar a la sala blanca:
+
+```mcfunction
+/playsound minecraft:lolame.squid.patinesfondo ambient @a ~ ~ ~ 453453
+```
+
+## Gestión de cascos
+
+Generar los cascos:
+
+```mcfunction
+/patines.cascos.spawn
+```
+
+Permitir o impedir que los jugadores puedan agarrar un casco:
+
+```mcfunction
+/patines.cascos.alternar
+```
+
+<Info>
+Si algún jugador no puede recoger cascos, ejecuta:
+
+```mcfunction
+/effect clear @a minecraft:weakness
+```
+
+</Info>
+
+Quitar los cascos (por ejemplo, al finalizar la partida):
+
+```mcfunction
+/patines.cascos.quitar
+```
+
+## Área de preparación
+
+Teletransporte a los bloques de comandos (zona técnica):
+
+```mcfunction
+/execute in minecraft:overworld run tp @s -958.77 8.30 -320.44 -194.38 23.70
+```
+
+<Info>
+El botón de **abrir** reduce la velocidad de los jugadores y habilita el movimiento.  
+Puede provocar una caída temporal de TPS, pero se estabiliza enseguida.
+</Info>
+
+Una vez todos salgan, pulsa el botón de **cerrar**.
+
+Habilitar entrada segura de jugadores (mantiene velocidad y efectos si alguien sale y vuelve a entrar):
+
+```mcfunction
+/ce enable PlayerJoinPatines
+```
+
+## Cinemática y ambientación
+
+Activar cinemática:
+
+```mcfunction
+/cin.patines
+```
+
+Apagar luces:
+
+```mcfunction
+/luces.off
+```
+
+Desactivar regeneración natural (por seguridad):
+
+```mcfunction
+/gamerule naturalRegeneration false
+/effect clear @a minecraft:regeneration
+```
+
+## Inicio de la ronda
+
+Iniciar ronda automática:
+
+```mcfunction
+/patines.auto.<color> <segundos> <baldosas>
+```
+
+<Info>
+Ejemplo:  
+`/patines.auto.magenta 10 5` inicia una ronda de **10 segundos** y al finalizar se iluminan **5 baldosas magenta**.
+</Info>
+
+Dar colas a los jugadores:
+
+```mcfunction
+/patines.colas <cantidad>
+```
+
+<Info>
+Ejemplo:  
+`/patines.colas 30` asigna **30 colas aleatorias** entre los jugadores.
+</Info>
+
+Resetear el suelo y la ronda:
+
+```mcfunction
+/patines.suelo.reset
+```
+
+<Warning>
+Si el servidor empieza a ir lento cuando el contador llega a **0**, ejecuta:
+
+```mcfunction
+/effect give @a minecraft:weakness infinite 255 true
+```
+
+</Warning>
+
+## Finalización de la partida
+
+Quitar cascos:
+
+```mcfunction
+/patines.cascos.quitar
+```
+
+Evitar que los jugadores puedan agarrar cascos:
+
+```mcfunction
+/patines.cascos.alternar
+```
+
+Anunciar que el juego terminó:
+
+```mcfunction
+/playsound minecraft:lolame.squid.juego_finalizado_sigan_al_personal ambient @a -966.93 -56.00 -335.95 454356456
+```
+
+Abrir la puerta desde la zona de comandos.
+
+Si los jugadores siguen lentos, vuelve a ejecutar:
+
+```mcfunction
+/patines.cascos.quitar
+```
+
+Restaurar regeneración y efectos:
+
+```mcfunction
+/gamerule naturalRegeneration true
+/effect clear @a minecraft:resistance
+```
+
+## Regresar a las escaleras
+
+```mcfunction
+/tp.patines.sal
+```
+
+<Warning>
+Ejecuta este comando **solo cuando todos estén dentro del ascensor**.
+</Warning>

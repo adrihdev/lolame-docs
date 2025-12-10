@@ -1,0 +1,206 @@
+---
+title: 'Paint'
+icon: 'palette'
+---
+
+<Warning>  
+**Este juego puede generar bastante lag.**  
+Más abajo se indican ajustes recomendados para reducirlo.  
+Si aun así el servidor sigue con problemas, considera pasar al siguiente juego.  
+</Warning>
+
+<Info>  
+Si sigues el orden original del evento, debes guiarte por la **luz 0**.  
+El ascensor también se identifica por los carteles con el nombre **Paint**.  
+</Info>
+
+## Acceso al juego
+
+Para ir a la zona de equipos de Paint:
+
+```mcfunction
+/tp.sal.pai
+```
+
+## Preparación de equipos
+
+Indica a los jugadores:
+
+* Deben **formar parejas**.
+* Una vez en parejas, deben entrar a **una jaula vacía** y esperar.
+
+Cuando todos estén dentro de las jaulas (sin abrir la puerta negra), ejecuta:
+
+```mcfunction
+/execute in minecraft:overworld run tp @s -2507.45 -36.29 -735.42 1394.78 -25.80
+//pos1
+```
+
+Luego:
+
+```mcfunction
+/execute in minecraft:overworld run tp @s -2340.75 44.71 -575.10 1581.08 19.65
+//pos2
+```
+
+Cuando todos estén ubicados:
+
+```
+//undo
+```
+
+## Selección de colores
+
+Indica a los jugadores que **se coloquen en el centro** del color al que quieren pertenecer.
+
+Desactiva el daño por caída:
+
+```mcfunction
+/gamerule fallDamage false
+```
+
+Con las mismas coordenadas de antes, vuelve a marcar zona:
+
+```
+//pos1
+//pos2
+//replace structure_void barrier
+```
+
+Revisa que **todos estén encerrados** en los barrier blocks. Luego:
+
+```mcfunction
+//replace chiseled_polished_blackstone air
+```
+
+Esto los dejará caer al sistema de teletransporte.
+
+Si alguno no se teletransporta correctamente:
+
+```mcfunction
+/execute as @a[team=Jugador] at @s run tp ~ ~4 ~
+```
+
+<Warning>  
+Los jugadores en **espectador** que atraviesen los tubos negros también recibirán equipo y serán teletransportados.  
+Aunque seguirán en spectator, evita que entren en esas zonas.  
+</Warning>
+
+## Ir al área de juego
+
+```mcfunction
+/execute in minecraft:overworld run tp @s -2697.81 35.98 -683.27 1772.32 42.75
+```
+
+Apaga las luces:
+
+```mcfunction
+/luces.off
+```
+
+Activa la cinemática:
+
+```mcfunction
+/cin.paint
+```
+
+## Instrucciones a los jugadores
+
+Explica lo siguiente:
+
+* **La brocha es la propia mano**; no existe brocha física.
+* **La pistola láser no pinta**, solo sirve para golpear al enemigo.
+* Tanto la brocha como la pistola se **recargan con el mismo bloque**.
+* Solo se puede recargar en la **base del color** del equipo.
+
+Dales un par de minutos para pensar su estrategia.
+
+## Optimización para evitar lag
+
+Ejecuta estos comandos antes de iniciar la partida:
+
+```mcfunction
+/dynview setviewdistance 2
+/dynview setsimulationdistance 2
+```
+
+Si el servidor sigue con lag, bájalo a **1**.
+Si el servidor va bien, puedes aumentarlo gradualmente después de iniciar.
+
+## Inicio del juego
+
+```mcfunction
+/paint.start
+```
+
+Spawn de lucky blocks (elige el número):
+
+```mcfunction
+/loocky.spawn <número>
+```
+
+Si la música termina, reproduce otra:
+
+```mcfunction
+/playsound lolame.squid.patines ambient @a ~ ~ ~ 345345
+```
+
+Cuando el tiempo esté por terminar, prepárate para finalizar:
+
+```mcfunction
+/paint.stop
+```
+
+## Fin de la partida
+
+Indica qué equipo perdió:
+
+```mcfunction
+/cin.paint.exp Rojo
+```
+
+o
+
+```mcfunction
+/cin.paint.exp Amarillo
+```
+
+Da resistencia para evitar muertes:
+
+```mcfunction
+/effect give @a minecraft:resistance infinite 255 true
+```
+
+Observa la animación final.
+Después, elimina a los jugadores del equipo derrotado.
+
+## Transición al siguiente día
+
+```mcfunction
+/pantalla.n
+```
+
+Silencia a todos y continúa:
+
+```mcfunction
+/bossbar set minecraft:a visible false
+/execute in minecraft:overworld run tp @a -1737.05 18.50 45.08 -190.20 12.00
+/camas.tp
+/startday 3
+```
+
+<Info>  
+Esto finaliza el juego y da inicio al **Día 3**.  
+</Info>
+
+## Limpieza final
+
+Quita la resistencia previamente otorgada:
+
+```mcfunction
+/effect clear @a minecraft:resistance
+```
+
+<Info>  
+El siguiente juego después de Paint es **Laberinto**.  
+</Info>

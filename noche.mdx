@@ -1,0 +1,49 @@
+---
+title: 'Noche'
+icon: 'moon'
+---
+
+<Info>
+Si estás siguiendo el orden de los juegos del evento original, **después de Ciego** deberás continuar con la **luz 0**.
+</Info>
+
+## Inicio de la noche
+
+Una vez todos los jugadores estén dentro de la sala de las camas y opcionalmente tras ejecutar alguna cinemática, inicia la noche con:
+
+```mcfunction
+/noche.start
+````
+
+<Info>
+Este comando inicia un contador de **60 segundos**.  
+Al finalizar, la noche comienza, se entregan botellas y otros ítems a los jugadores, y se reproduce la música de noche automáticamente.
+</Info>
+
+### Reproducir música adicional
+
+Si la noche dura más que la música inicial, puedes reproducirla de nuevo usando:
+
+```mcfunction
+/playsound minecraft:lolame.squid.noche<número del 1 al 10> ambient @a ~ ~ ~ 43543543
+```
+
+## Finalizar la noche
+
+Para detener la noche y abrir las puertas de los guardias mientras suenan los disparos:
+
+```mcfunction
+/noche.stop
+```
+
+## Limpiar inventario de los jugadores
+
+Para quitar todos los ítems de los jugadores:
+
+```mcfunction
+/noche.clear
+```
+
+<Warning>
+Asegúrate de usar `/noche.clear` solo cuando quieras reiniciar el inventario de todos los jugadores, ya que eliminará todos los objetos.
+</Warning>

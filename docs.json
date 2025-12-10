@@ -1,0 +1,53 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "L0LAME Studio",
+  "logo": "/logo.svg",
+  "colors": {
+    "primary": "#ff9538",
+    "light": "#ff9538",
+    "dark": "#202020"
+  },
+  "favicon": "favicon.svg",
+  "navbar": {
+    "links": [
+      {
+        "label": "Tienda",
+        "href": "https://lolame.studio/shop"
+      },
+      {
+        "label": "Discord",
+        "href": "https://discord.gg/CwuaUxUGAc"
+      }
+    ]
+  },
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude", "cursor", "vscode"]
+  },
+  "navigation": {
+  "groups": [
+      {
+        "group": "Inicio",
+        "pages": ["intro", "setup"]
+      },
+      {
+        "group": "Squid L0LAME Games 2 Remake",
+        "pages": ["dulces", "ciego", "noche", "patines", "colas", "paint", "laberinto", "veneno", "cristales", "base", "final"]
+      }
+    ]
+  },
+  "background": {
+    "decoration": "windows"
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/adrihdev",
+      "github": "https://github.com/adrihdev",
+      "discord": "https://discord.gg/CwuaUxUGAc"
+    }
+  },
+  "appearance": {
+  "default": "dark",
+  "strict": true
+  }
+}

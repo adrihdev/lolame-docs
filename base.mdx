@@ -1,0 +1,64 @@
+---
+title: 'En Base'
+icon: 'lightbulb'
+---
+
+<Info>
+El juego **En Base** se encuentra justo al lado del área de Cristales.  
+Esta sección explica cómo acceder, iniciar la ronda y gestionar los equipos.
+</Info>
+
+## Acceso al área del juego
+
+Para teletransportarte directamente al escenario de En Base:
+
+```mcfunction
+/execute in minecraft:overworld run tp @s -176.99 20.67 429.19 63.16 15.00
+````
+
+<Info>
+Ejecuta este comando al finalizar el juego de Cristales para mover al staff al área correcta.
+</Info>
+
+## Ambientación y música
+
+Puedes iniciar el ambiente sonoro con cualquier pista disponible en tu paquete de sonidos:
+
+```mcfunction
+/playsound minecraft:lolame.squid.<sonido> ambient @a ~ ~ ~ 346545
+```
+
+<Tip>
+Reemplaza `<sonido>` con el nombre de la pista deseada, por ejemplo:  
+`/playsound minecraft:lolame.squid.enbase_intro`
+</Tip>
+
+## Inicio de la ronda
+
+Comienza el juego colocando el número de bases que desees:
+
+```mcfunction
+/base.start <cantidad>
+```
+
+Reinicia la ronda en caso de error o para jugar nuevamente:
+
+```mcfunction
+/base.reset
+```
+
+<Info>
+`/base.reset` limpia el escenario y prepara las bases desde cero.
+</Info>
+
+## Gestión de equipos
+
+Para asignar jugadores al equipo correspondiente:
+
+```mcfunction
+/team join Jugador @a[team=sdpasa]
+```
+
+<Info>
+Repite este proceso conforme avanza el juego hasta que queden **solo dos jugadores**.
+</Info>

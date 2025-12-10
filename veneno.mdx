@@ -1,0 +1,77 @@
+---
+title: 'Veneno'
+icon: 'skull'
+---
+
+<Info>
+En el flujo estándar del evento, deberás **seguir la luz 7** para llegar al ascensor que conduce al área de Veneno.
+</Info>
+
+## Acceso al juego
+
+Para desplazarte directamente al área del juego Veneno, usa:
+
+```mcfunction
+/tp.sal.ven
+````
+
+## Introducción y explicación del juego
+
+Reproduce la explicación del juego con:
+
+```mcfunction
+/playsound minecraft:lolame.squid.veneno_ex ambient @a ~ ~ ~ 4354364
+```
+
+<Warning>
+Este juego es un **modo extra** utilizado únicamente cuando hay **más jugadores vivos de lo previsto**.
+</Warning>
+
+## Inicio del juego
+
+Usa este comando para iniciar Veneno indicando cuántos jugadores recibirán la patata envenenada:
+
+```mcfunction
+/veneno.start <cantidad>
+```
+
+<Info>
+Este comando asigna automáticamente el veneno a la cantidad especificada de jugadores.  
+</Info>
+
+### Ajustes recomendados antes de iniciar
+
+```mcfunction
+/gamerule naturalRegeneration false
+```
+
+Detener cualquier regeneración automática evitará que los jugadores con veneno recuperen vida.
+
+```mcfunction
+/effect clear @a minecraft:regeneration
+```
+
+Por si acaso algún jugador conserva el efecto de regeneración, este comando lo elimina.
+
+## Detener el juego
+
+```mcfunction
+/veneno.stop
+```
+
+<Tip>
+Restaurar la regeneración natural es recomendable una vez finaliza el minijuego.
+```mcfunction
+/gamerule naturalRegeneration true
+```
+</Tip>
+
+## Regresar a las escaleras
+
+```mcfunction
+/tp.ven.sal
+```
+
+<Warning>
+Ejecuta este comando cuando todos los jugadores hayan salido correctamente del área de Veneno.
+</Warning>
