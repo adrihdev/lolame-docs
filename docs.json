@@ -22,17 +22,39 @@
     ]
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude", "cursor", "vscode"]
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "cursor",
+      "vscode"
+    ]
   },
   "navigation": {
-  "groups": [
+    "groups": [
       {
         "group": "Inicio",
-        "pages": ["intro", "setup"]
+        "pages": [
+          "intro",
+          "setup"
+        ]
       },
       {
         "group": "Squid L0LAME Games 2 Remake",
-        "pages": ["dulces", "ciego", "noche", "patines", "colas", "paint", "laberinto", "veneno", "cristales", "base", "final"]
+        "pages": [
+          "squid2rmk/dulces",
+          "squid2rmk/ciego",
+          "squid2rmk/noche",
+          "squid2rmk/patines",
+          "squid2rmk/colas",
+          "squid2rmk/paint",
+          "squid2rmk/laberinto",
+          "squid2rmk/veneno",
+          "squid2rmk/cristales",
+          "squid2rmk/base",
+          "squid2rmk/final"
+        ]
       }
     ]
   },
@@ -41,13 +63,13 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/adrihdev",
-      "github": "https://github.com/adrihdev",
+      "x": "https://x.com/LOLAME_STUDIOS",
+      "github": "https://github.com/L0LAME-Studio",
       "discord": "https://discord.gg/CwuaUxUGAc"
     }
   },
   "appearance": {
-  "default": "dark",
-  "strict": true
+    "default": "dark",
+    "strict": true
   }
 }
