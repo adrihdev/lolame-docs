@@ -35,7 +35,9 @@
     "groups": [
       {
         "group": "Inicio",
-        "pages": []
+        "pages": [
+          "intro"
+        ]
       },
       {
         "group": "Squid L0LAME Games 2 Remake",
