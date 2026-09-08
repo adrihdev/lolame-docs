@@ -36,13 +36,13 @@
       {
         "group": "Inicio",
         "pages": [
-          "intro",
-          "setup"
+          "intro"
         ]
       },
       {
         "group": "Squid L0LAME Games 2 Remake",
         "pages": [
+          "squid2rmk/setup",
           "squid2rmk/dulces",
           "squid2rmk/ciego",
           "squid2rmk/noche",

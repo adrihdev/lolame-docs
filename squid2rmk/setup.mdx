@@ -1,0 +1,156 @@
+---
+title: 'Preparativos'
+---
+
+# Otorgar permisos
+
+<Warning>
+Si ejecutas `/op` y ejecutas un comando, te *banea instantáneamente*, para que esto no pase, deberá darse permisos con **LuckPerms**
+</Warning>
+
+```mcfunction
+/lp user <jugador> parent set admin
+```
+
+# Sistema de posiciones de guardias
+
+<Warning>
+Los guardias **no deben estar en creativo**, pueden estar en aventura.  
+Recuerda darles `/god <jugador>` para que nadie pueda atacarlos.  
+Si un guardia sale del servidor y vuelve a entrar, el efecto de `/god` se desactiva.
+</Warning>
+
+Para preparar el sistema:
+
+```mcfunction
+/give @a[team=Guardia] minecraft:light
+````
+
+<Info>
+Todos los guardias recibirán un bloque de luz.  
+Al colocarlo en la mano, podrán **ver las posiciones de los guardias** desde cualquier gamemode.
+</Info>
+
+# Comandos generales
+
+## Trajes
+```mcfunction
+/trajes <jugador|all>
+````
+
+<Info>
+Asigna trajes a un jugador o a todos.  
+Los jugadores deben estar en el team **Jugador** para recibir el traje.
+</Info>
+
+## Luces
+
+```mcfunction
+/luces.on
+/luces.off
+```
+
+## Modelos de guardias
+
+```mcfunction
+/circle <jugador>
+/calamar <jugador>
+/creeper <jugador>
+```
+
+<Info>
+Convierte a un jugador en guardia específico y lo añade automáticamente al team **guardia**.
+</Info>
+
+## Cinemáticas
+
+```mcfunction
+/ce call CinHuchacall
+```
+
+<Info>
+Activa la cinematica del cerdito.  
+Úsalo para secuencias o introducciones de minijuegos.
+</Info>
+
+## Pantalla de jugadores
+
+```mcfunction
+/scorer players <xxx>
+```
+
+<Warning>
+Debes ingresar **exactamente 3 dígitos**.  
+Si no, la pantalla no mostrará correctamente el número de jugadores.
+</Warning>
+
+Ejemplo:
+
+```mcfunction
+/scorer players 456
+```
+
+## Pantalla de premio acumulado
+
+```mcfunction
+/scorer prize <xxxxxx>
+```
+
+<Warning>
+Debes ingresar **exactamente 6 dígitos** para que el acumulado aparezca correctamente.
+</Warning>
+
+Ejemplo:
+
+```mcfunction
+/scorer prize 456000
+```
+
+## Estadísticas
+
+```mcfunction
+/stats
+```
+
+<Info>
+Muestra estadísticas generales del servidor y del evento.
+</Info>
+
+## Puerta principal (Main Door)
+
+```mcfunction
+/ce call MainDoor_Open_Call
+/ce call MainDoor_Close_Call
+```
+
+<Tip>
+Las **puertas de ascensor** se abren con llaves (`/give @s squiddoors:door_unlock`), las demás con `ce call`.
+</Tip>
+
+## PvP
+
+```mcfunction
+/pvp.on
+/pvp.off
+```
+
+## Llaves de ascensores
+
+```mcfunction
+/give @s squiddoors:door_unlock
+/give @s squiddoors:door_lock
+```
+
+<Info>
+Estas llaves solo funcionan para abrir/cerrar **puertas de ascensores**.
+</Info>
+
+## Whitelist
+
+```mcfunction
+/easywhitelist
+```
+
+<Info>
+Comando para gestionar la whitelist del servidor.
+</Info>
